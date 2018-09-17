@@ -1,0 +1,5 @@
+package com.star.dao;
+
+public interface ILinkManDAO {
+
+}

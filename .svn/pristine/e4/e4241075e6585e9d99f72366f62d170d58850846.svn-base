@@ -1,0 +1,7 @@
+package com.star.service.impl;
+
+import com.star.service.ILinkManService;
+
+public class LinkManServiceImpl implements ILinkManService{
+
+}

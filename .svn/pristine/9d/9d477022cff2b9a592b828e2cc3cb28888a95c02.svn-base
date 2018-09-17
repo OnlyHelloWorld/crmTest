@@ -1,0 +1,7 @@
+package com.star.dao.impl;
+
+import com.star.dao.ICustomerDAO;
+
+public class CustomerDAOImpl implements ICustomerDAO{
+
+}

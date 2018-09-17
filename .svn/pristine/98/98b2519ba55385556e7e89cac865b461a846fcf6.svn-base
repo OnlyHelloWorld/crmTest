@@ -1,0 +1,35 @@
+package com.star.dao.impl;
+
+import java.util.List;
+
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Projections;
+import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
+
+import com.star.dao.ICustomerDAO;
+import com.star.domain.Customer;
+
+public class CustomerDAOImpl extends HibernateDaoSupport implements ICustomerDAO{
+
+	@Override
+	public Integer getTotalCount(DetachedCriteria detachedCriteria) {
+		//设置查询的聚合函数,总记录数(稍后添加详细解释)
+		detachedCriteria.setProjection(Projections.rowCount());
+		List<Long> list = (List<Long>) getHibernateTemplate().findByCriteria(detachedCriteria);
+		//清空之前设计的聚合函数
+		detachedCriteria.setProjection(null);
+		if (list != null && list.size() > 0) {
+			Long count = list.get(0);
+			return count.intValue();
+		}else {
+			return null;
+		}
+	}
+
+	@Override
+	public List<Customer> getPageList(DetachedCriteria detachedCriteria, int start, Integer pageSize) {
+		List<Customer> list = (List<Customer>) getHibernateTemplate().findByCriteria(detachedCriteria, start, pageSize);
+		return list;
+	}
+
+}

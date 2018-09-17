@@ -1,0 +1,7 @@
+package com.star.dao.impl;
+
+import com.star.dao.ILinkManDAO;
+
+public class LinkManDAOImpl implements ILinkManDAO{
+
+}

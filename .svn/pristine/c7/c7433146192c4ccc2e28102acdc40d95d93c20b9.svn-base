@@ -1,0 +1,20 @@
+package com.star.service.impl;
+
+import com.star.dao.ISaleVisitDAO;
+import com.star.domain.SaleVisit;
+import com.star.service.ISaleVisitService;
+
+public class SaleVisitServiceImpl implements ISaleVisitService {
+
+	private ISaleVisitDAO saleVisitDAO;
+	
+	public void setSaleVisitDAO(ISaleVisitDAO saleVisitDAO) {
+		this.saleVisitDAO = saleVisitDAO;
+	}
+
+	@Override
+	public void save(SaleVisit saleVisit) {
+		saleVisitDAO.saveOrUpdate(saleVisit);
+	}
+
+}

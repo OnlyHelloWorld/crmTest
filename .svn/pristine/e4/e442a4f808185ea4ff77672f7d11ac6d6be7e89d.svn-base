@@ -1,0 +1,37 @@
+package com.star.web.action;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.star.domain.SaleVisit;
+import com.star.domain.User;
+import com.star.service.ISaleVisitService;
+
+public class SaleVisitAction extends ActionSupport implements ModelDriven<SaleVisit>{
+
+	private SaleVisit saleVisit;
+	private ISaleVisitService saleVisitService;
+	
+	public void setSaleVisitService(ISaleVisitService saleVisitService) {
+		this.saleVisitService = saleVisitService;
+	}
+
+	public String add() throws Exception {
+		//取出登录用户,因为用户为拜访记录的组成部分
+		User u = (User) ActionContext.getContext().getSession().get("User");
+		saleVisit.setUser(u);
+		//调用service方法保存客户记录
+		saleVisitService.save(saleVisit);
+		//重定向到拜访记录列表的Action
+		
+		return "toList";
+	}
+	
+	@Override
+	public SaleVisit getModel() {
+		return saleVisit;
+	}
+	
+	
+	
+}

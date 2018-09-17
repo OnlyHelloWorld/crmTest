@@ -1,0 +1,9 @@
+package com.star.dao;
+
+import com.star.domain.User;
+
+public interface IUserDAO {
+
+	User getByUserCode(String usercode);
+	void save(User u);
+}

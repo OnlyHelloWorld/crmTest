@@ -1,0 +1,9 @@
+package com.star.service;
+
+import com.star.domain.SaleVisit;
+
+public interface ISaleVisitService {
+
+	void save(SaleVisit saleVisit);
+
+}

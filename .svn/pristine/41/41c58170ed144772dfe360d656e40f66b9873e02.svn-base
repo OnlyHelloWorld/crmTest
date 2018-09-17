@@ -1,0 +1,28 @@
+package com.star.dao.impl;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.springframework.orm.hibernate5.HibernateCallback;
+import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
+import com.star.dao.IUserDAO;
+import com.star.domain.User;
+
+public class UserDAOImpl extends BaseDAOImpl<User> implements IUserDAO{
+
+	public User getByUserCode(String usercode) {
+		
+		return getHibernateTemplate().execute(new HibernateCallback<User>() {
+
+			@Override
+			public User doInHibernate(Session session) throws HibernateException {
+
+				String hql = "from User where user_code = ?";
+				org.hibernate.Query query = session.createQuery(hql);
+				query.setParameter(0, usercode);
+				User user = (User)query.uniqueResult();
+				return user;
+			}
+		});
+	}
+
+}

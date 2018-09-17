@@ -1,0 +1,7 @@
+package com.star.service.impl;
+
+import com.star.service.ICustomerService;
+
+public class CustomerServiceImpl implements ICustomerService{
+
+}
