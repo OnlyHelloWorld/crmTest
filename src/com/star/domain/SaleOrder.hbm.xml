@@ -3,22 +3,22 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.star.domain" >
-	<class name="SaleVisit" table="sale_visit" >
-		<id name="visit_id">
+	<class name="SaleOrder" table="sale_order" >
+		<id name="order_id">
 		<!-- generator:主键生成策略 -->
 			<!-- 主键为String类型的,MySQL生成策略只能是手动指定或者是UUID
 				如果使用的是UUID数据库设计id长度需要大于36 -->
 			<generator class="native"></generator>
 		</id>
-		<property name="visit_interviewee"  ></property>
-		<property name="visit_addr"  ></property>
-		<property name="visit_detail"  ></property>
-		<property name="visit_time"  ></property>
-		<property name="visit_nexttime"  ></property>
+		<property name="order_linkman"  ></property>
+		<property name="order_addr"  ></property>
+		<property name="order_detail"  ></property>
+		<property name="order_time"  ></property>
+		<property name="order_nexttime"  ></property>
 		
 		<!-- 多对一 -->
-		<many-to-one name="customer" column="visit_cust_id" class="Customer" ></many-to-one>
+		<many-to-one name="order_supplier_id" column="order_supplier_id" class="Supplier" ></many-to-one>
 		<!-- 多对一 -->
-		<many-to-one name="user" column="visit_user_id" class="User" ></many-to-one>
+		<many-to-one name="order_user_id" column="order_user_id" class="User" ></many-to-one>
 	</class>
 </hibernate-mapping>

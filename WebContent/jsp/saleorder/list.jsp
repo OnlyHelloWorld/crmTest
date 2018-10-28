@@ -6,7 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<TITLE>访问记录列表</TITLE> 
+<TITLE>订单记录列表</TITLE> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <LINK href="${pageContext.request.contextPath }/css/Style.css" type=text/css rel=stylesheet>
 <LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
@@ -55,7 +55,7 @@
 					<TD vAlign=top width="100%" bgColor=#ffffff>
 						<TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
 							<TR>
-								<TD class=manageHead>当前位置：访问记录管理 &gt; 记录列表</TD>
+								<TD class=manageHead>当前位置：订单记录管理 &gt; 订单列表</TD>
 							</TR>
 							<TR>
 								<TD height=2></TD>
@@ -67,7 +67,7 @@
 								<TR>
 									<TD height=25>	
 										<FORM id="pageForm" name="customerForm"
-										action="${pageContext.request.contextPath }/SaleVisitAction_list"
+										action="${pageContext.request.contextPath }/SaleOrderAction_list"
 										method=post>
 										<!-- 隐藏域.当前页码 -->
 										<input type="hidden" name="currentPage" id="currentPageInput" value="<s:property value="#pageBean.currentPage" />" />
@@ -76,11 +76,11 @@
 										<TABLE cellSpacing=0 cellPadding=2 border=0>
 											<TBODY>
 												<TR>
-													<TD>客户名称：</TD>
+													<TD>供应商名称：</TD>
 													<TD>
-														<input type="hidden" name="customer.cust_id" id="cust_id" value="${param['customer.cust_id']}" />
-														<INPUT class=textbox style="WIDTH: 80px" maxLength=50 name="cust_name"  id="cust_name" value="${param['cust_name']}" >
-														<input type="button" value="选择客户" onclick="window.open('${pageContext.request.contextPath}/CustomerAction_list?select=true','','width=600,height=300')" />
+														<input type="hidden" name="order_supplier_id.supplier_id" id="supplier_id" value="${param['order_supplier_id.supplier_id']}" />
+														<INPUT class=textbox style="WIDTH: 80px" maxLength=50 name="supplier_name"  id="supplier_name" value="${param['supplier_name']}" >
+														<input type="button" value="选择客户" onclick="window.open('${pageContext.request.contextPath}/SupplierAction_list?select=true','','width=600,height=300')" />
 													</TD>
 													
 													<TD><INPUT class=button id=sButton2 type=submit
@@ -100,30 +100,30 @@
 											<TBODY>
 												<TR
 													style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
-													<TD>业务员名称</TD>
-													<TD>客户名称</TD>
-													<TD>访问时间</TD>
-													<TD>访问人</TD>
-													<TD>访问地址</TD>
-													<TD>访问详情</TD>
-													<TD>下次访问时间</TD>
+													<TD>负责人名称</TD>
+													<TD>供应商名称</TD>
+													<TD>下单时间</TD>
+													<TD>签单用户</TD>
+													<TD>下单地址</TD>
+													<TD>订单详情</TD>
+													<TD>下次下单时间</TD>
 													<TD>操作</TD>
 												</TR>
 												<s:iterator value="#pageBean.list" >
 												<TR
 													style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-													<TD><s:property value="user.user_name" /></TD>
-													<TD><s:property value="customer.cust_name" /></TD>
-													<TD><s:property value="visit_time_s" /></TD>
-													<TD><s:property value="visit_interviewee" /></TD>
-													<TD><s:property value="visit_addr" /></TD>
-													<TD><s:property value="visit_detail" /></TD>
-													<TD><s:property value="visit_nexttime_s" /></TD>
+													<TD><s:property value="order_user_id.user_name" /></TD>
+													<TD><s:property value="order_supplier_id.supplier_name" /></TD>
+													<TD><s:property value="order_time_s" /></TD>
+													<TD><s:property value="order_interviewee" /></TD>
+													<TD><s:property value="order_addr" /></TD>
+													<TD><s:property value="order_detail" /></TD>
+													<TD><s:property value="order_nexttime_s" /></TD>
 													<TD>
 															<!-- 没有传递参数,显示删除和修改操作 -->
-														<a href="${pageContext.request.contextPath }/SaleVisitAction_toEdit?visit_id=<s:property value="visit_id" />">修改</a>
+														<a href="${pageContext.request.contextPath }/SaleOrderAction_toEdit?order_id=<s:property value="order_id" />">修改</a>
 														&nbsp;&nbsp;
-														<a href="javascript:void(0)" onclick="deleteConfirm('<s:property value="cust_name" />','${pageContext.request.contextPath }/CustomerAction_delete?cust_id=<s:property value="cust_id" />');" >删除</a>
+														<a href="javascript:void(0)" onclick="deleteConfirm('<s:property value="supplier_name" />','${pageContext.request.contextPath }/SupplierAction_delete?supplier_id=<s:property value="supplier_id" />');" >删除</a>
 													</TD>
 												</TR>
 												</s:iterator>

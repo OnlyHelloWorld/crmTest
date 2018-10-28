@@ -11,13 +11,7 @@
 		<property name="user_name"  ></property>
 		<property name="user_password"  ></property>
 		<property name="user_state"  ></property>
-	
-		<!-- 填写many方集合名 -->
-		<set name="saleVisits">
-			<!-- many方依赖one方的主键列名 -->
-			<key column="visit_user_id"></key>
-			<!-- many方的类名 -->
-			<one-to-many class="SaleVisit"/>
-		</set>
+		<property name="user_role"  ></property>
+		
 	</class>
 </hibernate-mapping>

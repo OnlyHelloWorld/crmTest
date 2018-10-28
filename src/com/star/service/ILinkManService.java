@@ -13,6 +13,6 @@ public interface ILinkManService {
 
 	LinkMan getById(Long lkm_id);
 
-	
+	void deleteItem(Long lkm_id);
 
 }

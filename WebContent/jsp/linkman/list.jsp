@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<TITLE>联系人列表</TITLE> 
+<TITLE>负责人列表</TITLE> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <LINK href="${pageContext.request.contextPath }/css/Style.css" type=text/css rel=stylesheet>
 <LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
@@ -52,7 +52,7 @@
 					<TD vAlign=top width="100%" bgColor=#ffffff>
 						<TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
 							<TR>
-								<TD class=manageHead>当前位置：联系人管理 &gt; 联系人列表</TD>
+								<TD class=manageHead>当前位置：负责人管理 &gt; 负责人列表</TD>
 							</TR>
 							<TR>
 								<TD height=2></TD>
@@ -74,16 +74,16 @@
 										<TABLE cellSpacing=0 cellPadding=2 border=0>
 											<TBODY>
 												<TR>
-													<TD>联系人名称：</TD>
+													<TD>负责人名称：</TD>
 													<TD>
 														<INPUT class=textbox id=sChannel2
 														style="WIDTH: 80px" maxLength=50 name="lkm_name" value="${param['lkm_name']}">
 													</TD>
-													<TD>客户名称：</TD>
+													<TD>供应商名称：</TD>
 													<TD>
-														<input type="hidden" name="customer.cust_id" id="cust_id" value="${param['customer.cust_id']}" />
-														<INPUT class=textbox style="WIDTH: 80px" maxLength=50 name="cust_name"  id="cust_name" value="${param['cust_name']}" >
-														<input type="button" value="选择客户" onclick="window.open('${pageContext.request.contextPath}/CustomerAction_list?select=true','','width=600,height=300')" />
+														<input type="hidden" name="supplier.supplier_id" id="supplier_id" value="${param['supplier.supplier_id']}" />
+														<INPUT class=textbox style="WIDTH: 80px" maxLength=50 name="supplier_name"  id="supplier_name" value="${param['supplier_name']}" >
+														<input type="button" value="选择供应商" onclick="window.open('${pageContext.request.contextPath}/SupplierAction_list?select=true','','width=600,height=300')" />
 													</TD>
 													<TD>
 														<INPUT class=button id=sButton2 type=submit
@@ -104,7 +104,7 @@
 											<TBODY>
 												<TR
 													style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
-													<TD>联系人名称</TD>
+													<TD>负责人名称</TD>
 													<TD>性别</TD>
 													<TD>办公电话</TD>
 													<TD>手机</TD>
@@ -120,7 +120,7 @@
 													<TD>
 													<a href="${pageContext.request.contextPath }/LinkManAction_toEdit?lkm_id=<s:property value="#linkMan.lkm_id" />">修改</a>
 													&nbsp;&nbsp;
-													<a href="${pageContext.request.contextPath }/linkmanServlet?method=delete&lkmId=${linkman.lkmId}">删除</a>
+													<a href="${pageContext.request.contextPath}/LinkManAction_delete?lkm_id=<s:property value="#linkMan.lkm_id" />">删除</a>
 													</TD>
 												</TR>
 												</s:iterator>

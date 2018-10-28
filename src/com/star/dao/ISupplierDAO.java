@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.hibernate.criterion.DetachedCriteria;
 
-import com.star.domain.Customer;
+import com.star.domain.Supplier;
 
-public interface ICustomerDAO extends IBaseDAO<Customer>{
+public interface ISupplierDAO extends IBaseDAO<Supplier>{
 
 	List<Object[]> getIndustryCount();
-	
+
 }

@@ -30,6 +30,7 @@
 		<!-- 全局的结果集配置 -->
 		<global-results>
 			<result name="toLogin" type="redirect">/login.jsp</result>
+			<result name="noPermission" type="redirect">/nopermission.jsp</result>
 		</global-results>
 		<!-- 全局错误配置 -->
 		<global-exception-mappings>
@@ -39,18 +40,23 @@
 			将该action的生命周期完全由spring来进行管理
 			这种情况需要手动进行属性组装 -->
 		<action name="UserAction_*" class="userAction" method="{1}" >
+			<result name="edit"  >/jsp/user/add.jsp</result>
+			<result name="list" >/jsp/user/list.jsp</result>
+			<result name="toList" type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">UserAction_list</param>
+			</result>
 			<result name="toHome" type="redirect" >/index.htm</result>
 			<result name="error" >/login.jsp</result>
 			<result name="regist" >/regist.jsp</result>
 		</action>
-		<action name="CustomerAction_*" class="customerAction" method="{1}" >
-			
+		<action name="SupplierAction_*" class="supplierAction" method="{1}" >
 			<result name="industryCount"  >/jsp/customer/industryCount.jsp</result>
 			<result name="edit"  >/jsp/customer/add.jsp</result>
 			<result name="list" >/jsp/customer/list.jsp</result>
 			<result name="toList" type="redirectAction">
 				<param name="namespace">/</param>
-				<param name="actionName">CustomerAction_list</param>
+				<param name="actionName">SupplierAction_list</param>
 			</result>
 		</action>
 		<action name="BaseDictAction" class="baseDictAction" method="execute" ></action>	
@@ -65,13 +71,13 @@
 			<result name="list"  >/jsp/linkman/list.jsp</result>
 			<result name="add"  >/jsp/linkman/add.jsp</result>
 		</action>
-		<action name="SaleVisitAction_*" class="saleVisitAction" method="{1}" >
+		<action name="SaleOrderAction_*" class="saleOrderAction" method="{1}" >
 			<result name="toList" type="redirectAction" >
 				<param name="namespace">/</param>
-				<param name="actionName">SaleVisitAction_list</param>
+				<param name="actionName">SaleOrderAction_list</param>
 			</result>
-			<result name="list"  >/jsp/salevisit/list.jsp</result>
-			<result name="add"  >/jsp/salevisit/add.jsp</result>
+			<result name="list"  >/jsp/saleorder/list.jsp</result>
+			<result name="add"  >/jsp/saleorder/add.jsp</result>
 		</action>
 	</package>
 	

@@ -108,7 +108,7 @@ A.active {
 				<TR>
 					<TD width=15><IMG src="images/new_005.jpg" border=0></TD>
 					<TD align=middle width=180 background=images/new_006.jpg
-						height=35><B>人力资源 －功能菜单</B></TD>
+						height=35><B>超市系统 －功能菜单</B></TD>
 					<TD width=15><IMG src="images/new_007.jpg" border=0></TD>
 				</TR>
 			</TBODY>
@@ -122,7 +122,7 @@ A.active {
 							<TBODY>
 								<TR>
 									<TD class=mainMenu onClick="MenuDisplay('table_1');"><SPAN
-										class=span id=table_1Span>＋</SPAN> 客户管理</TD>
+										class=span id=table_1Span>＋</SPAN> 供应商管理</TD>
 								</TR>
 								<TR>
 									<TD>
@@ -131,11 +131,11 @@ A.active {
 											<TBODY>
 												<TR>
 													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/jsp/customer/add.jsp" 
-														target=main>－ 新增客户</A></TD>
+														target=main>－ 新增供应商</A></TD>
 												</TR>
 												<TR> 
-													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/CustomerAction_list"
-														target=main>－ 客户列表</A></TD>
+													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/SupplierAction_list"
+														target=main>－ 供应商列表</A></TD>
 												</TR>
 												
 											</TBODY>
@@ -147,7 +147,7 @@ A.active {
 								</TR>
 								<TR>
 									<TD class=mainMenu onClick="MenuDisplay('table_2');"><SPAN
-										class=span id=table_2Span>＋</SPAN> 联系人管理</TD>
+										class=span id=table_2Span>＋</SPAN> 负责人管理</TD>
 								</TR>
 								<TR>
 									<TD>
@@ -156,11 +156,11 @@ A.active {
 											<TBODY>
 												<TR>
 													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/jsp/linkman/add.jsp"
-														target=main>－ 新增联系人</A></TD>
+														target=main>－ 新增负责人</A></TD>
 												</TR>
 												<TR>
 													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/LinkManAction_list"
-														target=main>－联系人列表</A></TD>
+														target=main>－负责人列表</A></TD>
 												</TR>
 												
 											</TBODY>
@@ -172,7 +172,7 @@ A.active {
 								</TR>
 								<TR>
 									<TD class=mainMenu onClick="MenuDisplay('table_5');"><SPAN
-										class=span id=table_5Span>＋</SPAN> 客户拜访管理</TD>
+										class=span id=table_5Span>＋</SPAN> 订单记录管理</TD>
 								</TR>
 								<TR>
 									<TD>
@@ -180,12 +180,12 @@ A.active {
 											cellPadding=2 width=155 align=center border=0>
 											<TBODY>
 												<TR>
-													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/jsp/salevisit/add.jsp"
-														target=main>－新增客户拜访</A></TD>
+													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/jsp/saleorder/add.jsp"
+														target=main>－新增订单记录</A></TD>
 												</TR>
 												<TR>
-													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/SaleVisitAction_list"
-														target=main>－客户拜访列表</A></TD>
+													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/SaleOrderAction_list"
+														target=main>－订单记录列表</A></TD>
 												</TR>
 												
 											</TBODY>
@@ -206,15 +206,15 @@ A.active {
 											<TBODY>
 												<TR>
 													<TD class=menuSmall><A class=style2 href="#"
-														target=main>－ 客户信息查询</A></TD>
+														target=main>－ 供应商信息查询</A></TD>
 												</TR>
 												<TR>
 													<TD class=menuSmall><A class=style2 href="#"
-														target=main>－ 联系人信息查询</A></TD>
+														target=main>－ 负责人信息查询</A></TD>
 												</TR>
 												<TR>
 													<TD class=menuSmall><A class=style2 href="#"
-														target=main>－ 客户拜访记录查询</A></TD>
+														target=main>－ 订单记录记录查询</A></TD>
 												</TR>
 											</TBODY>
 										</TABLE>
@@ -233,13 +233,10 @@ A.active {
 											cellPadding=2 width=155 align=center border=0>
 											<TBODY>
 												<TR>
-													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/CustomerAction_industryCount"
-														target=main>－客户行业统计</A></TD>
+													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/SupplierAction_industryCount"
+														target=main>－供应商行业统计</A></TD>
 												</TR>
-												<TR>
-													<TD class=menuSmall><A class=style2 href="#"
-														target=main>－客户来源统计</A></TD>
-												</TR>
+												
 												
 											</TBODY>
 										</TABLE>
@@ -258,17 +255,14 @@ A.active {
 											cellPadding=2 width=155 align=center border=0>
 											<TBODY>
 												<TR>
-													<TD class=menuSmall><A class=style2 href="#"
-														target=main>－角色管理</A></TD>
+													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/UserAction_list"
+														target=main>－权限管理</A></TD>
 												</TR>
 												<TR>
-													<TD class=menuSmall><A class=style2 href="#"
+													<TD class=menuSmall><A class=style2 href="${pageContext.request.contextPath}/SupplierAction_industryCount"
 														target=main>－用户管理</A></TD>
 												</TR>
-												<TR>
-													<TD class=menuSmall><A class=style2 href="#"
-														target=main>－数据字典</A></TD>
-												</TR>
+												
 											</TBODY>
 										</TABLE>
 									</TD>

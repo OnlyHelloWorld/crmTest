@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.star.domain" >
+	
+	<class name="Supplier" table="supplier" >
+		
+		<id name="supplier_id"  >
+			<!-- generator:主键生成策略 -->
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="supplier_name" column="supplier_name" >
+			<!--  <column name="cust_name" sql-type="varchar" ></column> -->
+		</property>
+		<property name="supplier_linkman" column="supplier_linkman" ></property>
+		<property name="supplier_phone" column="supplier_phone" ></property>
+		<property name="supplier_mobile" column="supplier_mobile" ></property>
+		<many-to-one name="supplier_source" column="supplier_source" class="BaseDict"></many-to-one>
+		<many-to-one name="supplier_industry" column="supplier_industry" class="BaseDict"></many-to-one>
+		<many-to-one name="supplier_level" column="supplier_level" class="BaseDict"></many-to-one>
+	</class>
+</hibernate-mapping>

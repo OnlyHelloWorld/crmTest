@@ -6,7 +6,7 @@
 <html>
 <head>
 <TITLE>
-<s:property value="#customer==null?'添加':'修改'" />客户
+<s:property value="#supplier==null?'添加':'修改'" />供应商
 </TITLE> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <LINK href="${pageContext.request.contextPath }/css/Style.css" type=text/css rel=stylesheet>
@@ -19,9 +19,9 @@
 
 $(document).ready(function(){
 		
-	loadSelect("006","level","cust_level.dict_id" <s:if test="#customer.cust_level!=null">,<s:property value="#customer.cust_level.dict_id" /></s:if>);
-	loadSelect("001","industry","cust_industry.dict_id" <s:if test="#customer.cust_industry!=null">,<s:property value="#customer.cust_industry.dict_id" /></s:if>);
-	loadSelect("009","source","cust_source.dict_id" <s:if test="#customer.cust_source!=null">,<s:property value="#customer.cust_source.dict_id" /></s:if>);
+	loadSelect("006","level","supplier_level.dict_id" <s:if test="#supplier.supplier_level!=null">,<s:property value="#supplier.supplier_level.dict_id" /></s:if>);
+	loadSelect("001","industry","supplier_industry.dict_id" <s:if test="#supplier.supplier_industry!=null">,<s:property value="#supplier.supplier_industry.dict_id" /></s:if>);
+	loadSelect("009","source","supplier_source.dict_id" <s:if test="#supplier.supplier_source!=null">,<s:property value="#supplier.supplier_source.dict_id" /></s:if>);
 	
 	
 	});
@@ -37,10 +37,10 @@ $(document).ready(function(){
 			3.文件上传使用<input type="file" /> 组件
 	 -->
 	<FORM id=form1 name=form1
-		action="${pageContext.request.contextPath }/CustomerAction_add"
+		action="${pageContext.request.contextPath }/SupplierAction_add"
 		method="post" enctype="multipart/form-data" >
 		
-		<input type="hidden" name="cust_id" value="<s:property value="#customer.cust_id" />" />
+		<input type="hidden" name="supplier_id" value="<s:property value="#supplier.supplier_id" />" />
 
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 			<TBODY>
@@ -62,7 +62,7 @@ $(document).ready(function(){
 					<TD vAlign=top width="100%" bgColor=#ffffff>
 						<TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
 							<TR>
-								<TD class=manageHead>当前位置：客户管理 &gt; <s:property value="#customer==null?'添加':'修改'" />客户</TD>
+								<TD class=manageHead>当前位置：供应商管理 &gt; <s:property value="#supplier==null?'添加':'修改'" />供应商</TD>
 							</TR>
 							<TR>
 								<TD height=2></TD>
@@ -73,21 +73,21 @@ $(document).ready(function(){
 						  
 						    
 							<TR>
-								<td>客户名称：</td>
+								<td>供应商名称：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="cust_name" value="<s:property value="#customer.cust_name" />">
+														style="WIDTH: 180px" maxLength=50 name="supplier_name" value="<s:property value="#supplier.supplier_name" />">
 								</td>
-								<td>客户级别 ：</td>
+								<td>供应商级别 ：</td>
 								<td id="level" >
 								</td>
 							</TR>
 							
 							<TR>
-								<td>信息来源 ：</td>
+								<td>供应商来源 ：</td>
 								<td id="source">
 								</td>
-								<td>客户行业：</td>
+								<td>供应商行业：</td>
 								<td id="industry">
 								</td>
 							</TR>
@@ -96,12 +96,12 @@ $(document).ready(function(){
 								<td>固定电话 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="cust_phone" value="<s:property value="#customer.cust_phone" />">
+														style="WIDTH: 180px" maxLength=50 name="supplier_phone" value="<s:property value="#supplier.supplier_phone" />">
 								</td>
 								<td>移动电话 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="cust_mobile" value="<s:property value="#customer.cust_mobile" />">
+														style="WIDTH: 180px" maxLength=50 name="supplier_mobile" value="<s:property value="#supplier.supplier_mobile" />">
 								</td>
 							</TR>
 							<TR>

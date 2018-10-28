@@ -10,7 +10,7 @@ import org.hibernate.criterion.Projections;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import com.star.dao.IBaseDAO;
-import com.star.domain.Customer;
+import com.star.domain.Supplier;
 
 public class BaseDAOImpl<T> extends HibernateDaoSupport implements IBaseDAO<T>{
 	

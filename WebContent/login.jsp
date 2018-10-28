@@ -24,6 +24,9 @@ TD {
 		}
 		
 	};
+	function change(){
+		document.getElementById("randomCodeImg").src="/randomCode?"+new Date().getTime();
+	}
 </script>
 
 </HEAD>
@@ -42,7 +45,7 @@ style="LEFT: 0px; POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #0066ff"></DIV
 <TABLE cellSpacing=0 cellPadding=0 width=900 align=center border=0>
   <TBODY>
   <TR>
-    <TD style="HEIGHT: 105px"><IMG src="images/login_1.gif" 
+    <TD style="HEIGHT: 105px"><IMG src="images/login_1.png" 
   border=0></TD></TR>
   <TR>
     <TD background=images/login_2.jpg height=300>

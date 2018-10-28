@@ -1,5 +1,5 @@
 package com.star.domain;
-//鑱旂郴浜哄疄浣?
+
 public class LinkMan {
 	
 	private Long lkm_id;
@@ -12,26 +12,26 @@ public class LinkMan {
 	private String lkm_memo;
 	private String lkm_position;
 	
-	//琛ㄨ揪澶氬涓?鍏崇郴
-	private Customer customer ;
+	//多对一
+	private Supplier supplier ;
 	
 	//----------------------------------------------
-	//涓嶄笌鏁版嵁搴撲腑鐨勫垪瀵瑰簲,鍙负浜嗘帴鏀惰〃鍗曞弬鏁?
-	private Long cust_id;
+	//不与数据库中的列对应,只为了接收表单参数
+	private Long supplier_id;
 	
-	
-	
-	public Long getCust_id() {
-		return cust_id;
+
+
+	public Long getSupplier_id() {
+		return supplier_id;
 	}
-	public void setCust_id(Long cust_id) {
-		this.cust_id = cust_id;
+	public void setSupplier_id(Long supplier_id) {
+		this.supplier_id = supplier_id;
 	}
-	public Customer getCustomer() {
-		return customer;
+	public Supplier getSupplier() {
+		return supplier;
 	}
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
 	}
 	public Long getLkm_id() {
 		return lkm_id;

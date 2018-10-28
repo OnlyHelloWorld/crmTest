@@ -17,7 +17,7 @@ public interface IBaseDAO<T> {
 	void deleteById(Serializable id);
 	//改
 	void update(T t);
-	//查 根据id查    难度:还行 *
+	//查 根据id查    难度:掉头屑 *
 	T getById(Serializable id);
 	//查查查 快难死了 查个毛线   难度:掉头发 ***
 	Integer getTotalCount(DetachedCriteria dc);

@@ -2,15 +2,17 @@ package com.star.service;
 
 import org.hibernate.criterion.DetachedCriteria;
 
-import com.star.domain.SaleVisit;
+import com.star.domain.SaleOrder;
 import com.star.utils.PageBean;
 
-public interface ISaleVisitService {
+public interface ISaleOrderService {
 
-	void save(SaleVisit saleVisit);
+	void save(SaleOrder saleOrder);
 
 	PageBean getPageBean(DetachedCriteria detachedCriteria, Integer currentPage, Integer pageSize);
 
-	SaleVisit getById(Long visit_id);
+	SaleOrder getById(Long order_id);
+
+	void deleteItem(Long order_id);
 
 }

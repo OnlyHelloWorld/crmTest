@@ -76,8 +76,8 @@
 	<bean name="userAction" class="com.star.web.action.UserAction" scope="prototype">
 		<property name="userService" ref="userService"></property>
 	</bean>
-	<bean name="customerAction" class="com.star.web.action.CustomerAction" scope="prototype">
-		<property name="customerService" ref="customerService"></property>
+	<bean name="supplierAction" class="com.star.web.action.SupplierAction" scope="prototype">
+		<property name="supplierService" ref="supplierService"></property>
 	</bean>
 	<bean name="baseDictAction" class="com.star.web.action.BaseDictAction" scope="prototype">
 		<property name="baseDictService" ref="baseDictService"></property>
@@ -85,16 +85,16 @@
 	<bean name="linkManAction" class="com.star.web.action.LinkManAction" scope="prototype">
 		<property name="linkManService" ref="linkManService"></property>
 	</bean>
-	<bean name="saleVisitAction" class="com.star.web.action.SaleVisitAction" scope="prototype">
-		<property name="saleVisitService" ref="saleVisitService"></property>
+	<bean name="saleOrderAction" class="com.star.web.action.SaleOrderAction" scope="prototype">
+		<property name="saleOrderService" ref="saleOrderService"></property>
 	</bean>
 	
 	<!-- service在spring中的配置 -->
 	<bean name="userService" class="com.star.service.impl.UserServiceImpl" >
 		<property name="userDAO" ref="userDAO" ></property>
 	</bean>
-	<bean name="customerService" class="com.star.service.impl.CustomerServiceImpl" >
-		<property name="customerDAO" ref="customerDAO" ></property>
+	<bean name="supplierService" class="com.star.service.impl.SupplierServiceImpl" >
+		<property name="supplierDAO" ref="supplierDAO" ></property>
 	</bean>
 	<bean name="baseDictService" class="com.star.service.impl.BaseDictServiceImpl" >
 		<property name="baseDictDAO" ref="baseDictDAO" ></property>
@@ -102,15 +102,15 @@
 	<bean name="linkManService" class="com.star.service.impl.LinkManServiceImpl" >
 		<property name="linkManDAO" ref="linkManDAO" ></property>
 	</bean>
-	<bean name="saleVisitService" class="com.star.service.impl.SaleVisitServiceImpl" >
-		<property name="saleVisitDAO" ref="saleVisitDAO" ></property>
+	<bean name="saleOrderService" class="com.star.service.impl.SaleOrderServiceImpl" >
+		<property name="saleOrderDAO" ref="saleOrderDAO" ></property>
 	</bean>
 	
 	<!-- dao在spring中的配置 -->
 	<bean name="userDAO" class="com.star.dao.impl.UserDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	<bean name="customerDAO" class="com.star.dao.impl.CustomerDAOImpl">
+	<bean name="supplierDAO" class="com.star.dao.impl.SupplierDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	<bean name="baseDictDAO" class="com.star.dao.impl.BaseDictDAOImpl">
@@ -119,7 +119,7 @@
 	<bean name="linkManDAO" class="com.star.dao.impl.LinkManDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	<bean name="saleVisitDAO" class="com.star.dao.impl.SaleVisitDAOImpl">
+	<bean name="saleOrderDAO" class="com.star.dao.impl.SaleOrderDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 </beans>

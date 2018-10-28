@@ -40,6 +40,11 @@ public class LinkManServiceImpl implements ILinkManService{
 	}
 
 	@Override
+	public void deleteItem(Long lkm_id) {
+		// TODO Auto-generated method stub
+		linkManDAO.deleteById(lkm_id);
+	}
+	@Override
 	public LinkMan getById(Long lkm_id) {
 		// TODO Auto-generated method stub
 		return linkManDAO.getById(lkm_id);
@@ -49,6 +54,7 @@ public class LinkManServiceImpl implements ILinkManService{
 	public void setCustomerDAO(ILinkManDAO linkManDAO) {
 		this.linkManDAO = linkManDAO;
 	}
+
 
 
 

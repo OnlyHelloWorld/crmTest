@@ -37,7 +37,7 @@
 					<TD vAlign=top width="100%" bgColor=#ffffff>
 						<TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
 							<TR>
-								<TD class=manageHead>当前位置：客户管理 &gt; 客户行业统计</TD>
+								<TD class=manageHead>当前位置：供应商管理 &gt; 供应商行业统计</TD>
 							</TR>
 							<TR>
 								<TD height=2></TD>
@@ -98,6 +98,7 @@
 				</TR>
 			</TBODY>
 		</TABLE>
+		<TD><FONT size=5><B>缺少柱状图或饼状图,稍后补充</B></FONT></TD>
 	<s:debug></s:debug>
 </BODY>
 </HTML>

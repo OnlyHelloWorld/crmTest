@@ -1,8 +1,5 @@
 package com.star.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class User {
 
 	private Long user_id;
@@ -10,16 +7,16 @@ public class User {
 	private String user_name;
 	private String user_password;
 	private Character user_state;
+	private Long user_role;
 	
-	//表达用户和拜访记录的一对多
-	private Set<SaleVisit> saleVisits = new HashSet<>();
 	
-	public Set<SaleVisit> getSaleVisits() {
-		return saleVisits;
+	public Long getUser_role() {
+		return user_role;
 	}
-	public void setSaleVisits(Set<SaleVisit> saleVisits) {
-		this.saleVisits = saleVisits;
+	public void setUser_role(Long user_role) {
+		this.user_role = user_role;
 	}
+	
 	public Long getUser_id() {
 		return user_id;
 	}
@@ -53,7 +50,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [user_id=" + user_id + ", user_code=" + user_code + ", user_name=" + user_name + ", user_password="
-				+ user_password + "]";
+				+ user_password + ", user_state=" + user_state + ", user_role=" + user_role + "]";
 	}
 	
 	

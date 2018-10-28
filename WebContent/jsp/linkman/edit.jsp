@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<TITLE>添加联系人</TITLE> 
+<TITLE>添加负责人</TITLE> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <LINK href="${pageContext.request.contextPath }/css/Style.css" type=text/css rel=stylesheet>
 <LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
@@ -39,7 +39,7 @@
 					<TD vAlign=top width="100%" bgColor=#ffffff>
 						<TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
 							<TR>
-								<TD class=manageHead>当前位置：联系人管理 &gt; 修改联系人</TD>
+								<TD class=manageHead>当前位置：负责人管理 &gt; 修改负责人</TD>
 							</TR>
 							<TR>
 								<TD height=2></TD>
@@ -47,16 +47,16 @@
 						</TABLE>
 						<TABLE cellSpacing=0 cellPadding=5  border=0>
 							<tr>
-								<td>所属客户：</td>
+								<td>所属供应商：</td>
 								<td colspan="3"><input type="text" name="custId" style="WIDTH: 180px" value="${linkman.cstCustomer.custId}" /></td>
 							</tr>
 							<TR>
-								<td>联系人名称：</td>
+								<td>负责人名称：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
 														style="WIDTH: 180px" maxLength=50 name="lkmName" value="${linkman.lkmName}" >
 								</td>
-								<td>联系人性别：</td>
+								<td>负责人性别：</td>
 								<td>
 								<input type="radio" value="1" name="lkmGender" <c:if test="${linkman.lkmGender=='1' }">checked</c:if>>男
 								
@@ -64,12 +64,12 @@
 								</td>
 							</TR>
 							<TR>
-								<td>联系人办公电话 ：</td>
+								<td>负责人办公电话 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
 														style="WIDTH: 180px" maxLength=50 name="lkmPhone" value="${linkman.lkmPhone}">
 								</td>
-								<td>联系人手机 ：</td>
+								<td>负责人手机 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
 														style="WIDTH: 180px" maxLength=50 name="lkmMobile" value="${linkman.lkmMobile}">

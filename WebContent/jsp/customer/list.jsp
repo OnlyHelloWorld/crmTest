@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<TITLE>客户列表</TITLE> 
+<TITLE>供应商列表</TITLE> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <LINK href="${pageContext.request.contextPath }/css/Style.css" type=text/css rel=stylesheet>
 <LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
@@ -27,14 +27,14 @@
 			$("#pageForm").submit();
 	};
 	
-	function selectCustomer(cust_id,cust_name){
+	function selectCustomer(supplier_id,supplier_name){
 		//获得添加页面的window对象
 		var win = window.opener;
 		//获得添加页面的document对象
 		var doc = win.document;
 		//获得隐藏域,和 文本框,并赋值
-		doc.getElementById("cust_id").value=cust_id;
-		doc.getElementById("cust_name").value=cust_name;
+		doc.getElementById("supplier_id").value=supplier_id;
+		doc.getElementById("supplier_name").value=supplier_name;
 		//关闭当前窗口
 		window.close();
 		
@@ -66,7 +66,7 @@
 					<TD vAlign=top width="100%" bgColor=#ffffff>
 						<TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
 							<TR>
-								<TD class=manageHead>当前位置：客户管理 &gt; 客户列表</TD>
+								<TD class=manageHead>当前位置：供应商管理 &gt; 供应商列表</TD>
 							</TR>
 							<TR>
 								<TD height=2></TD>
@@ -78,20 +78,20 @@
 								<TR>
 									<TD height=25>
 									<FORM id="pageForm" name="customerForm"
-										action="${pageContext.request.contextPath }/CustomerAction_list"
+										action="${pageContext.request.contextPath }/SupplierAction_list"
 										method=post>
 										<!-- 隐藏域.当前页码 -->
 										<input type="hidden" name="currentPage" id="currentPageInput" value="<s:property value="#pageBean.currentPage" />" />
 										<!-- 隐藏域.每页显示条数 -->
 										<input type="hidden" name="pageSize" id="pageSizeInput"       value="<s:property value="#pageBean.pageSize" />" />
 										<!-- 放置是否需要选择的标记参数 -->
-										<input type="hidden" name="select"  id="selectede"   value="<s:property value="#parameters.select" />" />
+										<input type="hidden" name="select"  id="select"   value="<s:property value="#parameters.select" />" />
 										<TABLE cellSpacing=0 cellPadding=2 border=0>
 											<TBODY>
 												<TR>
-													<TD>客户名称：</TD>
+													<TD>供应商名称：</TD>
 													<TD><INPUT class=textbox id=sChannel2
-														style="WIDTH: 80px" maxLength=50 name="cust_name" value="${param.cust_name}"></TD>
+														style="WIDTH: 80px" maxLength=50 name="supplier_name" value="${param.supplier_name}"></TD>
 													
 													<TD><INPUT class=button id=sButton2 type=submit
 														value=" 筛选 " name=sButton2></TD>
@@ -110,43 +110,43 @@
 											<TBODY>
 												<TR
 													style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
-													<TD>客户名称</TD>
-													<TD>客户级别</TD>
-													<TD>客户来源</TD>
+													<TD>供应商名称</TD>
+													<TD>供应商级别</TD>
+													<TD>供应商来源</TD>
 													<TD>联系人</TD>
 													<TD>电话</TD>
 													<TD>手机</TD>
 													<TD>操作</TD>
 												</TR>
-												<s:iterator value="#pageBean.list" var="cust" >
+												<s:iterator value="#pageBean.list" var="supp" >
 												<TR 		
 													style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
 													<TD>
-														<s:property value="#cust.cust_name" />
+														<s:property value="#supp.supplier_name" />
 													</TD>
 													<TD>
-													<s:property value="#cust.cust_level.dict_item_name" />
+													<s:property value="#supp.supplier_level.dict_item_name" />
 													</TD>
 													<TD>
-													<s:property value="#cust.cust_source" />
+													<s:property value="#supp.supplier_source.dict_item_name" />
 													</TD>
 													<TD>
-													<s:property value="#cust.cust_linkman" />
+													<s:property value="#supp.supplier_linkman" />
 													</TD>
 													<TD>
-													<s:property value="#cust.cust_phone" />
+													<s:property value="#supp.supplier_phone" />
 													</TD>
 													<TD>
-													<s:property value="#cust.cust_mobile" />
+													<s:property value="#supp.supplier_mobile" />
 													</TD>
 													<TD>
 													<s:if test="#parameters.select==null">
-														<a href="${pageContext.request.contextPath }/CustomerAction_toEdit?cust_id=<s:property value="#cust.cust_id" />">修改</a>
+														<a href="${pageContext.request.contextPath }/SupplierAction_toEdit?supplier_id=<s:property value="#supp.supplier_id" />">修改</a>
 														&nbsp;&nbsp;
-														<a href="${pageContext.request.contextPath }/customerServlet?method=delete&custId=${customer.cust_id}">删除</a>
+														<a href="${pageContext.request.contextPath }/SupplierAction_delete?supplier_id=<s:property value="#supp.supplier_id" />">删除</a>
 													</s:if>
 													<s:else>
-														<input type="button" value="选择" onclick="selectCustomer(<s:property value="#cust.cust_id" />,'<s:property value="#cust.cust_name" />')" />
+														<input type="button" value="选择" onclick="selectCustomer(<s:property value="#supp.supplier_id" />,'<s:property value="#supp.supplier_name" />')" />
 													</s:else>
 													</TD>
 												</TR>
